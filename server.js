@@ -13,6 +13,7 @@ const bodyParser = require("body-parser");
 
 const indexRouter = require("./routes/index"); // Separate route import. this is the '/' default landing
 const authorRouter = require("./routes/author");
+const bookRouter = require("./routes/books");
 
 app.set("view engine", "ejs"); // sets are required to make use of previously imported extra modules
 app.set("views", __dirname + "/views");
@@ -35,5 +36,6 @@ db.once("open", () => console.log("Connected to Mongoose"));
 // routes
 app.use("/", indexRouter); // required to use the route that was imported
 app.use("/authors", authorRouter);
+app.use("/books", bookRouter);
 
 app.listen(process.env.PORT || 3000); // use the initialised app to listen to a port. 3000 by default.
