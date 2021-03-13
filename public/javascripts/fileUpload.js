@@ -1,5 +1,5 @@
-FilePond.registerPlugin(FilePondPluginImagePreview, FilePondPluginImageResize);
-
+FilePond.registerPlugin(FilePondPluginImagePreview);
+FilePond.registerPlugin(FilePondPluginImageResize);
 FilePond.registerPlugin(FilePondPluginFileEncode);
 
 FilePond.setOptions({

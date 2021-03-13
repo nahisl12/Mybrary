@@ -10,6 +10,7 @@ const app = express(); // set up/initialise an instance of the imported express
 const expressLayouts = require("express-ejs-layouts");
 const ejs = require("ejs");
 const bodyParser = require("body-parser");
+const methodOverride = require("method-override");
 
 const indexRouter = require("./routes/index"); // Separate route import. this is the '/' default landing
 const authorRouter = require("./routes/author");
@@ -19,6 +20,7 @@ app.set("view engine", "ejs"); // sets are required to make use of previously im
 app.set("views", __dirname + "/views");
 app.set("layout", "layouts/layout");
 app.use(expressLayouts);
+app.use(methodOverride("_method"));
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({ limit: "10mb", extended: false }));
 
